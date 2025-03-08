@@ -15,36 +15,31 @@ const Contact = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError(""); // Clear error when user starts typing
+    setError("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation: Ensure all fields are filled
     if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       setError("All fields are required.");
       return;
     }
 
-    // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(formData.email)) {
       setError("Please enter a valid email.");
       return;
     }
 
-    // Phone number validation (basic)
     if (formData.phone.length < 10) {
       setError("Please enter a valid phone number.");
       return;
     }
 
-    // Simulate form submission
     setSuccess("Message sent successfully!");
     setError("");
 
-    // Redirect after a delay
     setTimeout(() => {
       navigate("/");
     }, 2000);
@@ -52,14 +47,13 @@ const Contact = () => {
 
   return (
     <div className="p-10 max-w-5xl mx-auto">
-      {/* Page Header */}
+
       <h1 className="text-3xl font-bold text-center text-gray-900 mb-6">Contact Us</h1>
       <p className="text-center text-gray-600 mb-8">
         Have questions? Get in touch with us using the form below.
       </p>
 
       <div className="flex flex-col md:flex-row gap-10">
-        {/* Contact Information */}
         <div className="md:w-1/3 bg-white shadow-lg p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-4 text-blue-700">Contact Details</h2>
           <div className="flex items-center gap-3 mb-4">
@@ -76,7 +70,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Contact Form */}
         <div className="md:w-2/3 bg-white shadow-lg p-6 rounded-lg">
           <h2 className="text-xl font-semibold mb-4 text-blue-700">Send a Message</h2>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -127,7 +120,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Google Map Embed */}
       <div className="mt-10">
         <h2 className="text-xl font-semibold mb-4 text-blue-700">Find Us on the Map</h2>
         <iframe
