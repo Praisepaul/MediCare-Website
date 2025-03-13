@@ -7,7 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const API_KEY = import.meta.env.VITE_API_GENERATIVE_LANGUAGE_CLIENT;
 
-function App() {
+function FloatingChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [chatHistory, setChatHistory] = useState([]);
   const [question, setQuestion] = useState("");
@@ -182,4 +182,4 @@ function App() {
   );
 }
 
-export default App;
+export default FloatingChat;
