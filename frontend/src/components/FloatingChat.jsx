@@ -5,7 +5,7 @@ import { Fab } from "@mui/material";
 import ChatIcon from "@mui/icons-material/Chat";
 import CloseIcon from "@mui/icons-material/Close";
 
-const API_KEY = import.meta.env.VITE_API_GENERATIVE_LANGUAGE_CLIENT;
+const API_KEY = "AIzaSyCWu5KQ9ff9L_F_s2j67-D_7QXJJLSr034";
 
 function FloatingChat() {
   const [isOpen, setIsOpen] = useState(false);
